@@ -1,0 +1,8 @@
+requests
+beautifulsoup4
+selenium
+pandas
+spacy
+groq
+youtube_transcript_api
+nltk
