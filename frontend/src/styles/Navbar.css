@@ -1,0 +1,180 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #8A2BE2;
+  color: white;
+  position: relative;
+}
+
+.nav-brand a {
+  color: white;
+  text-decoration: none;
+  font-size: clamp(1.2rem, 1rem + 1vw, 1.5rem); /* Responsive font size */
+  font-weight: bold;
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: clamp(1.2rem, 1rem + 1vw, 1.5rem); /* Responsive font size */
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.nav-content {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* New styles for sticky navigation */
+.nav-links-container {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  padding-top: 0.5rem;
+  background-color: transparent;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1rem;
+  background: rgba(138, 43, 226, 0.95); /* Same as navbar but with opacity */
+  padding: 0.5rem;
+  border-radius: 30px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(8px);
+  flex-wrap: nowrap; /* Prevent wrapping */
+  white-space: nowrap; /* Prevent text wrapping */
+}
+
+.nav-item {
+    color: white;
+    text-decoration: none;
+    padding: clamp(0.1rem, 0.4rem + 0.1vw, 0.9rem) clamp(0.1rem, 0.4rem + 0.2vw, 0.9rem);
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    font-size: clamp(0.5rem, 0.6rem + 0.5vw, 0.9rem);
+    display: inline-block; /* Change from block to inline-block */
+    width: auto; /* Change from 100% to auto */
+    text-align: center;
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+.nav-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.nav-item.active {
+  background-color: #6B21A8;
+  color: white;
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.user-name {
+  color: white;
+  font-size: clamp(0.875rem, 0.8rem + 0.5vw, 1rem); /* Responsive font size */
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.auth-buttons {
+  display: flex;
+  align-items: center;
+  background: #a55bff;
+  border-radius: 30px;
+  padding: 0.25rem;
+  gap: 0.5rem;
+  flex-wrap: nowrap; /* Prevent wrapping */
+  white-space: nowrap; /* Prevent text wrapping */
+}
+
+.auth-buttons .nav-item {
+  width: auto; /* Ensure buttons take only needed width */
+  flex-shrink: 0; /* Prevent shrinking */
+}
+
+.auth-buttons .nav-item.login {
+  color: #8A2BE2;
+  background-color: white;
+  border-radius: 21px 6px 6px 21px;
+}
+
+.auth-buttons .nav-item.login:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.auth-buttons .nav-item.signup {
+    color: white;
+    background: linear-gradient(45deg, #9530E6, #6442E8);
+    border-radius: 6px 21px 21px 6px;
+}
+
+.auth-buttons .nav-item.signup:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 975px) {
+  .nav-links-container {
+    position: static;
+    transform: none;
+    padding-top: 0;
+  }
+
+  .nav-links {
+    backdrop-filter: none;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+
+  .nav-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background-color: #8A2BE2;
+    padding: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-content.show {
+    display: flex;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 0;
+    gap: 0.5rem;
+  }
+
+  .nav-item {
+    width: 100%; /* Reset to full width for mobile */
+  }
+
+  .auth-buttons .nav-item {
+    width: auto; /* Keep auto width for auth buttons even on mobile */
+  }
+}

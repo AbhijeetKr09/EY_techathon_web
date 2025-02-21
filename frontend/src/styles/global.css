@@ -1,0 +1,46 @@
+:root {
+    --primary-color: #7e52ea;
+    --secondary-color: #5a00c9;
+    --background-color: #ffffff;
+    --text-color: #212121;
+    --gray-color: #7b7b7b;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+  }
+  
+  .auth-container {
+    display: flex;
+    min-height: 100vh;
+  }
+  
+  .auth-left {
+    flex: 1;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .auth-right {
+    flex: 1;
+    background: linear-gradient(135deg, #8457ff 0%, #9a64ff 100%);
+    color: white;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  /* Add more styles as needed */
